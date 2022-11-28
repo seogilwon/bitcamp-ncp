@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>get/post 요청</title>
+</head>
+<body>
+
+<!--input type="text" name="title"
+               ↓
+        ABC
+               ↓
+        _?title=ABC    (title=파라미터명/ ABC=파라미터값)
+        
+[name속성 2]
+<input type="text" name="name">
+<input type="tel" name="phone">
+               ↓
+abc
+010-1111-2222
+               ↓
+_?name=abc&tel=010-1111-2222
+
+        
+
+-->
+
+
+<p>폼 항목의 name을 지정하지 않으면 서버에 보내지않는다.</p>
+
+<form action="/html/form/exam02" method="get">
+  이름: <input type="text" name="name"><br>
+  나이: <input type="number" ><br>
+  <button>요청</button>
+</form>
+
+
+</body>
+</html>
+
