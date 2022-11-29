@@ -4,31 +4,41 @@
   <meta charset="UTF-8">
   <title>HTML</title>
   <style>
-  /* 폰트 다루기
-    => font-family : 폰트 그룹
-       예) sans-serif(고딕체), serif(명조체), monospace(고정너비),
-           cursive(흘림체), fantasy
-    => font : 폰트 그룹에 속해 있는 폰트
-       예) sans-serif => 맑은 고딕, 돋움체, 굴림체, Arial 등
-           serif => 궁서체, 바탕체, Times 등
-           monospace => monaco, consolas, Currier New 등
-           cursive => 나눔 손글씨, 필기체 등
-  */
+  /* 안쪽 여백 주기*/
+
+  body {
+    border: 5px solid red;
+    /* 모든 방향 */
+    padding: 10px;        /*패딩에 대고 ctrl+space 하면 옵션나옴*/
+    margin: 0px;          /*마진은 기본적으로 0으로 세팅하고시작하는게 좋다.*/
+  }
+  
+  div {
+    border: 2px solid gray;
+  }
+
+  h1, ul {
+    border: 1px solid red;
+    margin: 0px;
+  }
+
   #menu {
-    font-family: '맑은 고딕', 굴림체, 'Apple SD Gothic Neo', sans-serif;
-    /* 의미
-       => 맑은 고딕 폰트를 사용하라. 없다면 다음 폰트 사용하라.
-       => 모두 없다면 웹브라우저에 설정된 sans-serif 기본 폰트를 사용하라.
-     */
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 40px;
   }
 
   #content {
-    font-family: 궁서체, 바탕체, AppleMyungjo, serif;
+    /* 순서 => 시계 침이 도는 방향(12, 3, 6, 9)*/
+    padding: 10px 20px 30px 40px; 
   }
 
   #footer {
-    font-family: consolas, monaco, sans-serif;
+    /* 순서: 값이 두개일때 각각 (top/bottom), (left/right) 을 의미*/
+    padding: 10px 50px; 
   }
+
 
   </style>
 </head>
@@ -37,7 +47,6 @@
   <div id="menu">
   <img src='http://bitcamp.co.kr/resources/images/logo/head_logo.gif'>
   <ul>
-    <li class="c1">BITCamp</li>
     <li class="c1">교육안내</li>
     <li class="c1">교육과정</li>
     <li class="c2">수강신청</li>
@@ -79,7 +88,6 @@
   비트캠프 |
   <address>서울시 서초구 서초동 비트아카데미빌딩 3층</address>
   (주)비트컴퓨터 서초지점
-  <p>Copyright by BITCamp</p>
   </div>
 
 

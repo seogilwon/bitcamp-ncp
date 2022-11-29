@@ -13,7 +13,7 @@
   body {
     border: 10px solid blue;
     margin: 0px;
-    padding: 0px;
+    padding: 0;   /*0픽셀인경우 단위생략가능, 그외 단위는 px붙혀야함.*/
   }
   
   div {
@@ -23,10 +23,10 @@
 
   a {
     border: 1px solid red;
-    margin: 10px;
-    height: 30px;
-    width: 120px;
-    display: inline-block;
+    margin: 10px;        /*(display 값 없을때) 인라인태그 라서, 좌우는먹히는데 위아래는안먹힘*/
+    height: 30px;        /* height높이, width너비도 마찬가지*/
+    width: 120px;         
+    display: inline-block;     /*but display 태그를 쓰면, 인라인+블럭화 가능!!! */
   }
 
   #linkbar {
@@ -43,6 +43,7 @@
   }
   </style>
 </head>
+
 <body>
 
   <div id="menu">
@@ -66,7 +67,9 @@
   <button>로그인</button>
   <button>회원가입</button><br>
   <div id="linkbar">
-  <a href="http://www.facebook.com/bit">페이스북</a><a href="http://www.google.com/bit">구글</a><a href="http://www.twitter.com/bit">트위터</a>
+  <a href="http://www.facebook.com/bit">페이스북</a>
+  <a href="http://www.google.com/bit">구글</a>
+  <a href="http://www.twitter.com/bit">트위터</a>
   </div>
   </div>
 

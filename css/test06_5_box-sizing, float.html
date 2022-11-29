@@ -10,15 +10,16 @@
   */
   body {
     font-family: '맑은 고딕', 굴림체, 'Apple SD Gothic Neo', sans-serif;
-    font-size: medium;
+    font-size: small;
   }
 
   div {
-    /* border: 1px solid red; */
+    border: 1px solid red;
   }
+
   address {
     /* border: 1px solid blue; */
-    display: inline;
+    display: inline;    /*블럭타입 = 지혼자 긴 줄을 독점*/
     font-style: normal;
   }
   
@@ -26,22 +27,23 @@
     /* border: 1px solid black; */
     background-color: gray;
     color: white;
-    padding: 3px 3px 0px 3px;
-    border-radius: 6px;
+    padding: 3px 3px 3px 3px;
+    border-radius: 6px;       /*라운드처리*/
   }
 
   #company {
     /* border: 1px solid black; */
-    color: navy;
+    color: yellow;
+    font-weight: bold;
   }
   
   #menu {
     background-color: lightgray;
     font-size: 1.2em;
-    width: 180px;
+    width: 200px;
     padding: 10px;
-    box-sizing: border-box;
-    float: left;
+    box-sizing: border-box;   /*박스사이징 중요*/
+    float: left;        /*float 부유하다 공중에뜨다. 왼쪽오른쪽으로*/
     /* margin: 20px; */
   }
 
@@ -61,8 +63,8 @@
   
   #content {
     font-family: 바탕체, 궁서체, AppleMyungjo, serif;
-    margin-left: 180px;
-    padding: 10px
+    margin-left: 200px;
+    padding: 0px 10px;
   }
   
   #footer {
@@ -70,16 +72,18 @@
     font-size: 80%; 
     /* 왼쪽에 이 태그의 내용을 가리는 것이 있다면 
     그 아래로 위치하도록 이동시킨다.*/
-    clear: left;
-    text-align: center;
-    padding-top: 20px;
-    background-color: gray;
+    clear: left;              /* 왼쪽이 걸리적거리지않게 클리어하라. */
+    text-align: center;       /*텍스트가운데정렬*/
+    padding-top: 20px;    
+    background-color: navy;
     color: white;
   }
 
   #footer > p {
     font-style: italic;
   }
+
+
 
 
   </style>
@@ -128,7 +132,7 @@
   </div>
 
   <div id="footer">
-  <span id="bitcamp">비트캠프</span> |
+  <span id="bitcamp">비트캠프</span> |      <!--div는 여러태그를 그룹으로 묶는다./ span은 텍스트를 분리하여 css를 적용하는 용도-->
   <address>서울시 서초구 서초동 비트아카데미빌딩 3층</address>
   <span id="company">(주)비트컴퓨터 서초지점</span>
   <p>&copy; BITCamp</p>

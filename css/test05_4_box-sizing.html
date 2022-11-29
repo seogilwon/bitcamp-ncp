@@ -17,12 +17,13 @@
     padding: 0px;
     margin: 20px;
   }
+
   div {
     border: 10px solid red;
     margin: 10px;
     background-color: blue;
     color: white;
-    width: 200px;
+    width: 200px;       /*콘텐트의 너비, 높이*/
     height: 100px;
   }
 
@@ -35,7 +36,7 @@
     background-color: gray;
     /* border-box 라고 설정하면 width, height는 
        콘텐트 크기가 아니라 박스 크기가 된다. */
-    box-sizing: border-box;
+    box-sizing: border-box;        /*중요! 기본 컨텐트박스->보더박스*/
     margin-left: 20px;
     border-left-width: 50px;
     padding-left: 30px;

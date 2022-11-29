@@ -10,8 +10,10 @@
     border: 1px solid red;
     padding: 5px;
   }
+
   #email {
     width: 100px;
+    xheight: 300px;
     background-size: 16px;
     background-repeat: no-repeat;
     background-position: top right;
@@ -20,6 +22,7 @@
 
   </style>
 </head>
+
 <body>
 <form>
 <div>이메일: <input id="email" type="text"></div>
@@ -51,6 +54,9 @@ btn.addEventListener('click', function() {
        작은 이미지(bullet) 여러 개를 한 파일에 넣는다.
        출력할 때는 이 파일에 있는 그림의 위치를 조정해서 출력한다.
        다음 예제를 확인하라!
+
+       파일크기가 중요한게아님 서버 요청,응답할때 3way핸드쉐이크를통한통신이발생함.
+       이 통신횟수를 줄이는것이 중요. (네트워크부하 낮춤)
   */
 });
 

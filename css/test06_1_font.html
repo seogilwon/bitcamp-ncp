@@ -4,35 +4,37 @@
   <meta charset="UTF-8">
   <title>HTML</title>
   <style>
-    
-  div {
-    margin: 10px;
-  }
+/*참고 Raster 폰트, Vector 폰트*/
 
-  
-  /* 테두리 다루기*/
+
+  /* 폰트 다루기
+    => font-family : 폰트 그룹
+       예) sans-serif(고딕체), serif(명조체), monospace(고정너비),
+           cursive(흘림체), fantasy
+    => font : 폰트 그룹에 속해 있는 폰트
+       예) sans-serif => 맑은 고딕, 돋움체, 굴림체, Arial 등
+           serif => 궁서체, 바탕체, Times 등
+           monospace => monaco, consolas, Currier New 등
+           cursive => 나눔 손글씨, 필기체 등
+  */
   #menu {
-    border-style: solid;
-    border-width: 1px;
-    border-color: red;
-  }
-  
-  #footer { /* border의 style, width, color를 한 번에 지정할 수 있다*/
-    border: 4px red solid; /* 값을 지정하는 순서는 상관없다.*/
+    font-family: '맑은 고딕', 굴림체, 'Apple SD Gothic Neo', sans-serif;
+    /* 의미
+       => 맑은 고딕 폰트를 사용하라. 없다면 다음 폰트 사용하라.
+       => 모두 없다면 웹브라우저에 설정된 sans-serif 기본 폰트를 사용하라.
+       => 폰트이름 가운데에 공백이 있다면 ' ' 으로 묶는다.
+       => 이 페이지를 맥, 윈도우, 옛날OS 사용하는 사람이 있을수있기때문.
+     */
   }
 
   #content {
-    border-top-width: 2px;
-    border-top-style: dotted;
-    border-top-color: blue;
-    border-bottom: dashed 4px orange;
-    border-left: solid 6px green;
-    border-right: red dotted 40px;
+    font-family: 궁서체, 바탕체, AppleMyungjo, serif;
   }
 
-  p {
-    border: 1px solid black;
+  #footer {
+    font-family: consolas, monaco, sans-serif;
   }
+
   </style>
 </head>
 <body>
@@ -40,6 +42,7 @@
   <div id="menu">
   <img src='http://bitcamp.co.kr/resources/images/logo/head_logo.gif'>
   <ul>
+    <li class="c1">BITCamp</li>
     <li class="c1">교육안내</li>
     <li class="c1">교육과정</li>
     <li class="c2">수강신청</li>
@@ -81,6 +84,7 @@
   비트캠프 |
   <address>서울시 서초구 서초동 비트아카데미빌딩 3층</address>
   (주)비트컴퓨터 서초지점
+  <p>Copyright by BITCamp</p>
   </div>
 
 
