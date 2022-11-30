@@ -18,28 +18,31 @@
        => inline 처럼 한 줄을 다른 태그와 공유한다.
        => block 처럼 자신의 너비와 높이를 가질 수 있다.
   */
+
+/*홈페이지만들때 처음에 보더를 사용해서 배치하고, 나중에 주석처리로 다없앰.*/
+
   body {
-    font-family: '맑은 고딕', 굴림체, 'Apple SD Gothic Neo', sans-serif;
+    font-family: '맑은 고딕', 굴림체, 'Apple SD Gothic Neo', sans-serif; /*3번째 애플맥 기본, 2번째 리눅스 기본*/
     font-size: small;
   }
   
-  div {
+  div {                              /*블럭태그 = 지혼자라인독점 */
     border: 5px dashed #ff00ff;
   }
 
-  address {
+  address {                       /*블럭태그*/
     font-style: normal;
   }
   
-  ul, ol, address {
-    border: 1px solid red;
+  ul, ol, address {              /*ol태그의 부모는 ul임.*/  /*ul ol adress 블럭타입태그*/
+    border: 1px solid red;     
   }
   
-  a, span {
+  a, span {                        /*인라인태그*/
     border: 1px solid blue;
     padding: 10px;
     margin: 10px;
-    display: inline-block;
+    display: inline-block;         /*인라인태그 -> 블럭화*/  
     width: 70px;
     height: 15px;
   }
@@ -47,17 +50,19 @@
   #bitcamp {
     background-color: gray;
     color: white;
-    border-radius: 4px;
+    border-radius: 4px;                /*모서리 라운딩처리*/
     padding: 3px 3px 0px 3px;
   }
   
   #company {
     color: navy;
+    width: 200px;
+    padding: 0 10px;
   }
   
   #menu {
     background-color: lightgray;
-    font-size: 1.2em;
+    font-size: 1.2em;        /*기존폰트1.2배*/
     width: 300px;
     float: left;
     xmargin: 20px;
@@ -79,9 +84,9 @@
   
   #footer {
     border: 2px solid black;
-    font-size: 80%; 
-    clear: left;
-    text-align: center;
+    font-size: 80%;                   /*기본 스몰에서 더작게(80%)*/
+    clear: left;                      /*내려와라*/
+    text-align: center;               /*정렬*/
   }
   
   #footer > p {

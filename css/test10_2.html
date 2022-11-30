@@ -16,13 +16,13 @@
 
   */
   body {
-    border: 1px solid black;
+    border: 1px solid red;
     min-height: 300px;
   }
 
   div {
     border: 1px solid black;
-    margin: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;      /*마진은 위아래가 겹친다*/
     padding: 0px;
   }
 
@@ -35,7 +35,7 @@
   #d1 {background-color: red;}
   #d11 {
     background-color: orange;
-    min-height: 120px;
+    min-height: 120px;     /* min-height적용이유: 자식이 float했을경우/ 최소높이는 120px 자식이 늘어나면 더 늘어난다.*/
   }
   #d111 {
     float: left;

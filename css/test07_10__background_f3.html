@@ -13,15 +13,15 @@
        폰트이기 때문에 단색만 가능하다.
   */
   /* 웹에서 다운로드 하는 폰트는 별도로 선언하고 써야 한다.*/
-  /* 폰트 전체를 올리는것이 아님. 한글폰트경우 용량매우큼 */
+  /* 글꼴폰트(특히 한글)의 경우 용량이 매우 크므로 올리지않는다. */
   @font-face {
     font-family: "myfont"; /* 폰트 그룹명을 설정한다. */
     src: url('icons.woff') format('woff');
   }
 
   #state {
-    /* border: 1px solid red; */
-    xfont-family: myfont; /* OS에 설치된 폰트가 아니라 외부에서 다운받은 폰트*/
+    border: 1px solid red;
+    font-family: myfont; /* OS에 설치된 폰트가 아니라 외부에서 다운받은 폰트*/
     position: relative;
     top: 5px;
     display: inline-block;

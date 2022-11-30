@@ -12,22 +12,22 @@
     font-family: '맑은 고딕', 굴림체, 'Apple SD Gothic Neo', sans-serif;
     font-size: medium;
     border: 5px solid black;
-    xmargin: 10px;
+    margin: 10px;
     position:relative;
     xmin-height: 550px;
-    min-width: 600px;
+    xmin-width: 600px;
   }
 
   address {
-    xdisplay: inline;
+    display: inline;
     font-style: normal;
   }
 
   #bitcamp {
     background-color: gray;
     color: white;
-    xborder-radius: 4px;
-    xpadding: 3px 3px 0px 3px;
+    border-radius: 4px;
+    padding: 3px 3px 0px 3px;
   }
 
   #company {
@@ -40,7 +40,7 @@
     width: 180px;
     border: 1px solid red;
     position: absolute;
-    left: 0px; 
+    left: 0px;              /*absolute이어야 의미 ㅇ*/
     top: 0px;
     xfloat: left;
   }
@@ -58,8 +58,8 @@
     border: 1px solid red;
     margin-left: 184px;
     padding: 10px;
-    xheight: 500px;
-    min-height: 500px;
+    xheight: 500px;        /*height 는 고정이므로 x */
+    min-height: 510px;     
   }
 
   #footer {
@@ -70,9 +70,11 @@
     xclear: left; 
     text-align: center;
     border: 1px solid red;
+    position: absolute;
+    bottom: -100px;
   }
 
-  #footer > p {
+  x#footer > p {
     font-style: italic;
     /* italic => 폰트 파일에 있는 이탤릭체를 사용한다.
        oblique => 운영체제가 폰트를 강제로 기울여서 이탤릭체처럼 보이게 한다.
