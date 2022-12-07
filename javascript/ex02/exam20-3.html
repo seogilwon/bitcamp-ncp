@@ -19,10 +19,10 @@ obj.working = true;
 // 나머지 값을 별도의 객체에 담아서 받고 싶다면
 // {변수1, 변수2, ...나머지값받을변수}
 var {age, tel, ...other} = obj;
-console.log(age);
+console.log(age);   
 console.log(tel);
-console.log(other);
-console.log(other.name);
+console.log(other);   //...other이 age와 tel이 빠진 나머지를 출력한다.
+console.log(other.name);    //other에 있는 name 값 출력
 console.log(other.working);
 </script>
 </body>

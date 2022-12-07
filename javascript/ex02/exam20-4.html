@@ -9,9 +9,10 @@
 <script>
 "use strict"
 
+//함수가 배열을 생성하고 배열의주소를 리턴함. 배열,객체,함수를 넘길수없다. 그 주소를 넘기는것이다.
 function f1() {
-  return ["홍길동", 100, 90, 80, 270, 90];
-}
+  return ["홍길동", 100, 90, 80, 270, 90];  //국영수 총점 평균
+}              
 
 var r1 = f1();
 console.log(r1);
@@ -23,7 +24,7 @@ console.log(name, kor, eng, math);
 console.log("-----------------------");
 
 // 배열의 중간 값을 건너 뛰고 변수에 받을 수 있다.
-var [name,,,,sum,aver] = f1();
+var [name,,,,sum,aver] = f1();   // name,국,영,수,sum총점,aver평균
 console.log(name, sum, aver);
 
 </script>
