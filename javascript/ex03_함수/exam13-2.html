@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex03</title>
+</head>
+<body>
+<h1>함수 - 애로우(arrow) 함수를 아규먼트로 전달하기</h1>
+<script>
+"use strict"
+
+// [Quiz 1] forEach() 함수 정의를 보고,
+// 다음과같이 실행 결과가 출력되도록 나머지 코드를 작성하시오.
+// 출력결과:
+// 0: 100
+// 1: 홍길동
+// 2: 3.14
+// 3: 임꺽정
+// 4: true
+
+function forEach(a, cb) {
+	for (let i = 0; i < a.length; i++) {
+	  cb(i, a[i]);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+// let arr = [100, "홍길동", 3.14, "임꺽정", true];
+// function f(index, value) {
+// 	console.log(index + ":" +value);
+// }
+// forEach(arr, f); 
+// console.log("------------------------")
+
+// forEach(
+// 	[100, "홍길동", 3.14, "임꺽정", true], 
+//   function f(index, value) {
+// 	console.log(index + ":" +value);
+//   }
+// ); 
+console.log("------------------------")
+
+
+
+
+
+// forEach(arr, /* 여기에 애로우 함수를 작성하시오!*/);
+// forEach(/*배열내놔!*/, /*배열항목을 반복할때마다 호출할 함수 내놔!*/);
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

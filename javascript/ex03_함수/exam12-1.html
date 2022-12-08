@@ -15,18 +15,20 @@
 //
 //
 
+// 일반함수정의
 function f0() {
 	 return "안녕";
 }
 console.log(f0());
 
 
+// 익명함수정의
 var f1 = function() {
 	return "안녕";
 };
 console.log(f1());
 
-// 애로우(arrow ) 함수 : 초간단 함수 정의 문법
+// 애로우(arrow ) 함수 : 초간단 함수 정의 문법 (다른언어에서는 람다(lambda)라고함.)
 // 1) function 키워드를 제거한다.
 // 2) 대신 파라미터 블록과 코드 블록 사이에 화살표를 추가한다.
 var f2 = () => {
@@ -40,8 +42,169 @@ console.log(f2());
 // (한 문장 밖에 없으니까 가능한 한 줄로 표현하라!)
 var f3 = () => "안녕";
 console.log(f3());
+console.log("----------------");
 
+// 익명함수 정의 후 바로 호출하는 방법
+console.log((function() {
+	return "안녕";
+})());
+
+// 애로우 함수 정의 후 바로 호출하는 방법
 console.log((() => "안녕")());
+console.log("----------------");
+
+
+
+console.log((function(a, b) {
+	return a + b;
+})(100, 200));
+
+
+console.log(((a, b) => a + b)(111, 222));
+console.log("----------------");
+
+
+//아래의 똑같은 문장이 자유자재로 변환가능해야함.
+((name) => console.log(name + "님 반가워요!"))("홍길동");
+
+((name) => {
+console.log(name + "님 반가워요!");
+})("홍길동");
+
+(function(name) {
+console.log(name + "님 반가워요!");
+})("홍길동");
+
+var x = function(name) {
+console.log(name + "님 반가워요!");
+};
+x("홍길동");
+
+function x2(name) {
+console.log(name + "님 반가워요!");
+};
+x("홍길동");
+console.log("----------------");
+
+
+//
+
+
+// function xx(name) {
+// 	console.log(name + "님 반갑습니다.");
+// }
+// xx("홍길동");
+
+// //익명함수로 바꾼다.
+// var xx = function(name) {
+// 	console.log(name + "님 반갑습니다.");
+// };
+// xx("홍길동")
+
+// //정의하자마자 바로 호출되게 바꾼다
+// (function(name) {
+// 	console.log(name + "님 반갑습니다.");
+// })("홍길동");
+
+// //익명함수를 에로우 함수로 바꾼다.
+// ((name) => {
+// 	console.log(name + "님 반갑습니다.");
+// })("홍길동");
+
+// //애로우 펑션을 최소화
+// ((name) => console.log(name + "님 반갑습니다."))("홍길동");
+
+//
+
+function plus(a, b) {
+	console.log(a + b);
+}
+plus(100, 200)
+
+var plus = function(a, b) {
+	console.log(a + b);
+};
+plus(100, 200);
+
+(function(a, b) {
+	console.log(a + b);
+})(100, 200);
+
+((a, b) => {
+	console.log(a + b);
+})(100, 200);
+
+((a, b) => console.log(a + b))(100, 200);
+
+//
+console.log("----------------");
+
+function minus(a, b) {
+	console.log(a - b);
+}
+minus(100, 80);
+
+var minus = function(a, b) {
+	console.log(a - b);
+};
+minus(100, 80);
+
+(function(a, b) {
+	console.log(a - b);
+})(100, 80);
+
+((a, b) => {
+	console.log(a - b);
+})(100, 80);
+
+((a, b) => console.log(a - b))(100, 80);
+
+
+console.log("----------------");
+
+
+function multiple(a, b) {
+	console.log(a * b);
+}
+multiple(3, 7);
+
+var multiple = function(a, b) {  //익명함수
+	console.log(a * b);
+};
+multiple(3, 7);
+
+(function(a, b) {          //익명함수를 정의하자마자 호출
+	console.log(a * b);
+})(3, 7);
+
+((a, b) => {              //애로우펑션
+	console.log(a * b);
+})(3, 7);
+
+((a, b) => console.log(a * b))(3, 7);   //애로우펑션 최소화
+
+console.log("----------------");
+
+function divide(a, b) {
+	console.log(a / b);
+};
+divide(8, 3);
+
+var divide = function(a, b) {
+	console.log(a / b);
+};
+divide(8, 3);
+
+(function(a, b) {
+	console.log(a / b);
+})(8, 3);
+
+((a, b) => {
+	console.log(a / b);
+})(8, 3);
+
+((a, b) => console.log(a / b))(8, 3);
+
 </script>
 
 </body>
