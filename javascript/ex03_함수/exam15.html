@@ -18,10 +18,10 @@ function f1() {
 f1(); // "f1 함수 객체에 저장된 함수 코드를 실행하라!"는 의미다.
 
 // 함수는 객체이기 때문에 일반 객체처럼 사용할 수 있다.
-f1.v1 = "홍길동";
+f1.v1 = "홍길동";    //f1함수를 찾아가서 v1이라는이름(key)으로 홍길동을(value) 저장해라
 f1.v2 = 100;
 f1.v3 = true;
-f1.hello = function() {
+f1.hello = function() {       //key: hello  value: 500번지 -> 별도의객체에저장
   console.log("Hello!");
 };
 f1.hello2 = () => console.log("Hello2!");
@@ -30,7 +30,7 @@ console.log(f1.v1);
 console.log(f1.v2);
 console.log(f1.v3);
 f1.hello();
-f1.hello2();
+f1.hello2();       //f1 => 함수주소 // .hello => 함수주소 // () => 함수 실행 (함수 호출) 
 </script>
 
 </body>
