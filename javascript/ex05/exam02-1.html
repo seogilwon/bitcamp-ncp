@@ -26,13 +26,19 @@
 //
 var e = document.querySelector("article:first-child > p");
 console.log(e)
-console.log(e.innerHTML)
+console.log(e.innerHTML)  //p태그안에있는컨텐트 자식컨텐트포함 꺼냄
 console.log("----------------------")
 
 // Node.textContent
 // => Node() 생성자가 추가한 프로퍼티이다.
-// => 태그의 콘텐트에서 HTML 코드를 제거한 후 텍스트만 리턴한다.
+// => 태그의 콘텐트에서 HTML 코드를 제거한 후 텍스트만 리턴한다. (순수컨텐트)
 console.log(e.textContent)
+console.log("----------------------")
+
+// HTMLElement.innerText
+// => HTMLElement() 생성자가 추가한 프로퍼티이다.
+// => 태그의 콘텐트에서 HTML 코드를 제거한 후 텍스트만 리턴한다. (순수컨텐트)
+console.log(e.innerText)
 console.log("----------------------")
 
 </script>
