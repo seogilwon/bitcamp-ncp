@@ -18,17 +18,33 @@
 // 3: 임꺽정
 // 4: true
 
+let arr = [100, "홍길동", 3.14, "임꺽정", true]
+
 function forEach(a, cb) {
 	for (let i = 0; i < a.length; i++) {
 	  cb(i, a[i]);
   }
 }
 
+function q(a, b) {
+	console.log(a, ":", b);
+}
+forEach(arr, q)
+console.log("------------------------");
 
+var q1 = function(a, b) {
+	console.log(a, ":", b);
+}
+forEach(arr, q1)
+console.log("------------------------");
 
+(function(a, b) {
+	console.log(a, ":", b);
+})(arr, q1);
 
+console.log("------------------------");
 
-
+((a, b) => console.log(a, ":", b))(arr, q1);
 
 
 
