@@ -7,12 +7,10 @@
 <body>
 <h1>이벤트 - form 데이터 검증</h1>
 
-
 <form id="form2" action="http://www.daum.net">
 이름(*): <input type="text" id="name2" name="username"><br>
-  <button id="btn2" type="button">전송</button>  <!--type="button >> 일반버튼임!-->
+  <button id="btn2" type="button">전송</button>
 </form>
-
 
 <script>
 "use strict"
@@ -26,6 +24,7 @@ document.querySelector("#btn2").onclick = () => {
 
   // 일반 버튼을 클릭했을 때 입력 폼의 값을 서버에 제출하려면
   // form 태그 객체에 대해 submit() 함수를 호출하라!
+  //
   document.querySelector("#form2").submit();
 }
 
