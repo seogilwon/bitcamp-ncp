@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Sliding Puzzle</title>
+  <style>
+    .cell {                       /*4) 박스 스타일*/
+      width: 60px;
+      height: 60px;
+      border: 1px solid black;
+      border-radius: 5px;
+      text-align: center;    
+    }
+
+    #btn1 {
+      width: 200px;
+    }
+    
+
+  </style>
+</head>
+
+
+
+<body>
+
+  <div>
+    <table id="field" style="border: 1px solid black"></table>  <!--1) 이름 표현-->
+  </div>
+  <button id="btn1">섞어!!</button>
+  <h1>방향키로 조작합니다.</h1>
+  
+
+  <script>
+    var size = 4;
+    var fieldCells = createField();
+    var values;
+    var emptyX, emptyY;
+
+    var LEFT = {dx: -1, dy: 0};    // 9) 가능한 이동에 대한 상수 정의.
+    var RIGHT = {dx: 1, dy: 0};
+    var UP = {dx: 0, dy: -1};
+    var DOWN = {dx: 0, dy: 1};
+
+
+
+    function createField() {                  //2) 테이블칸을 생성하기위해 HTMLelements 만들기
+      var cells = [];
+      var table = document.getElementById('field');
+      for (var y = 0; y < size; y++) {                      //3) 행(row)과 열(column) 만들기
+        var tr = document.createElement('tr');
+        table.appendChild(tr);
+        var rowCells = [];
+        cells.push(rowCells);
+        for (var x = 0; x < size; x++) {
+          var td = document.createElement('td');
+          td.setAttribute('class', 'cell');
+          tr.appendChild(td);
+          rowCells.push(td);
+        }
+      }
+      return cells;
+    }
+
+
+    function createInitialValues() {   //5) 1에서 15까지 field 채우기
+      emptyX = emptyY = size - 1;
+      var v = [];
+      var i = 1;
+      for (var y = 0; y < size; y++) {
+        var rowValues = [];
+        v.push(rowValues);
+        for (var x = 0; x < size; x++) {
+          rowValues.push(i);
+          i++
+        }
+      }
+      v[emptyY][emptyX] = 0;
+      return v;
+    }
+
+
+    function draw() {                     //7) field 그리기 - HTML로 값 출력.
+      for (var y = 0; y < size; y++) {
+        for (var x = 0; x < size; x++) {
+          var v = values[y][x];
+          var td = fieldCells[y][x];
+          td.innerHTML = v == 0 ? '': String(v);
+        }
+      }
+    }
+
+
+    function makeMove(move) {            //8) 이동 - 빈 셀을 다른 셀과 교환.
+      var newX = emptyX + move.dx, newY = emptyY + move.dy;
+      if ((newX >= size) || (newX < 0) ||
+          (newY >= size) || (newY < 0))
+          {
+            return false;
+          }
+          var c = values[newY][newX];
+          values[newY][newX] = 0;
+          values[emptyY][emptyX] = c;
+          emptyX = newX;
+          emptyY = newY;
+          return true;
+    }
+
+
+    function shuffle() {               // 9) 랜덤함수로 field를 섞음.
+      var options = [LEFT, RIGHT, UP, DOWN];
+      var iterations = 100;              //섞는 횟수
+      for (var i = 0; i < iterations; i++) {
+        var move = options[Math.floor(Math.random() * options.length)];
+        makeMove(move);
+      }
+    }
+
+
+    function gameOver() {                  // 11) 게임이 끝났는지 확인 - 모든 셀에 올바른 값이 포함되어야함.
+      var expectedValue = 1;
+      for (var y = 0; y < size; y++) {
+        for (var x = 0; x < size; x++) {
+          if (values[y][x] == expectedValue) {
+            expectedValue++;
+          } else {
+            if (x == size - 1 && y == size - 1 && values[y][x] == 0) {
+              return true;
+            }
+            return false;
+        }
+      }
+    }
+    return true;
+  }
+
+
+    document.addEventListener('keydown', function(e) {   // 10) 키보드 누르는 이벤트.
+      switch (e.keyCode) {                               // 10) 키보드입력코드를 넣어줌. 
+        case 38: makeMove(UP); break;
+        case 40: makeMove(DOWN); break;
+        case 37: makeMove(LEFT); break;
+        case 39: makeMove(RIGHT); break;
+      }
+      draw();
+      if (gameOver()) {             //12) 이동 후 게임이 종료되었는지 확인
+        setTimeout(function() {
+          alert('Game over, you won!');
+          init();
+        }, 1000);
+      }
+    });
+
+
+    function init() {                      // 6) 게임시작하기
+      values = createInitialValues();
+      shuffle();                           // 9)
+      draw();
+    }
+
+    document.querySelector('#btn1').onclick = function() {init();}
+
+  </script>
+
+</body>
+</html>
