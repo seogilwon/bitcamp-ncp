@@ -14,7 +14,7 @@
 "use strict"
 // 동기 요청의 문제점 해결
 // => 웹브라우저는 서버에 요청을 별도의 스레드에서 실행하게 하고,
-//    서버 응답에 상관없이 즉시 다음 작업을 수행한다.
+//    서버 응답에 상관없이 즉시 다음 작업을 수행한다. (작업을시켜놓고 그냥 바로 )
 // => 이것을 "비동기(asynchronous) 요청"이라 부른다.
 //
 var ta = document.querySelector("#ta");
@@ -23,7 +23,7 @@ document.querySelector("#btn1").onclick = () => {
     var xhr = new XMLHttpRequest();
     
     // 비동기 요청을 하려면 3번 파라미터를 true로 설정해야 한다.
-    xhr.open("GET", "test5", true);
+    xhr.open("GET", "http://localhost:3000/exam03-1", true);
     xhr.send();
     console.log("send() 리턴함.");
     // 별도의 스레드를 통해 요청을 수행시키고 
