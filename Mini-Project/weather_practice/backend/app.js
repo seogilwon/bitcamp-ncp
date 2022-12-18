@@ -15,7 +15,7 @@ const app = express();
 app.use(express.urlencoded({extended: true}));
 
 
-app.get('./frontend/index', (req, res) => {     
+app.get('/proxy', (req, res) => {     
 
   res.set('Access-Control-Allow-Origin', '*'); 
   res.set('Content-Type', 'application/json; charset=UTF-8');
@@ -26,7 +26,7 @@ app.get('./frontend/index', (req, res) => {
   "&numOfRows=1000" +
   "&dataType=JSON" +
   "&base_date=" + req.query.base_date +
-  "&base_time=0600" +
+  "&base_time=1800" +
   "&nx=" + req.query.nx +
   "&ny=" + req.query.ny;
 

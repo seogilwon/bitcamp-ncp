@@ -1,0 +1,372 @@
+#header {
+  margin: 0px auto;
+  width: 240px;
+  color: dimgray;
+  animation:fadeIn 1s;
+}
+
+#header:hover {
+  color: black;
+  cursor: pointer;
+}
+
+#main { 
+  width: 1000px;
+  margin: 10px auto;
+  position: relative;
+  animation:fadeIn 1s;
+}
+
+#dae {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  margin-left: 455px;
+  position: absolute;
+  margin-top: 565px;
+}
+
+#daeicon {
+  position: absolute;
+  margin-left: 460px;
+  margin-top: 525px;
+  width: 50px;
+  height: 50px;
+}
+
+#guii {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  margin-left: 410px;
+  position: absolute;
+  margin-top: 480px;
+}
+
+#guiiicon {
+  position: absolute;
+  margin-left: 415px;
+  margin-top: 440px;
+  width: 50px;
+  height: 50px;
+}
+
+aside { 
+  width: 100px;
+  height: 300px;
+  position: absolute;
+  margin-top: 200px;
+  margin-left: 60px;
+}
+
+#wind {
+  margin-top: 30px;
+}
+
+#wind:hover {
+  cursor: pointer;
+}
+
+#temp:hover {
+  cursor: pointer;
+}
+
+#windblack {
+  position: relative;
+}
+
+#windgray {
+  position: absolute;
+  top: 135px;
+  left: 0px;
+}
+
+#tempblack {
+  position: relative;
+}
+
+#tempgray {
+  position: absolute;
+  top: 1px;
+  left: 0px;
+}
+
+#windgray:hover {
+  display: none;
+}
+
+#tempgray:hover {
+  display: none;
+}
+
+#guiiwind {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  margin-left: 410px;
+  position: absolute;
+  margin-top: 480px;
+  display: none;
+}
+
+#guiiwindicon {
+  position: absolute;
+  margin-left: 415px;
+  margin-top: 440px;
+  width: 50px;
+  height: 50px;
+  display: none;
+}
+
+#daejeonwind {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  margin-left: 455px;
+  position: absolute;
+  margin-top: 565px;
+  display: none;
+}
+
+#daejeonwindicon {
+  position: absolute;
+  margin-left: 460px;
+  margin-top: 525px;
+  width: 50px;
+  height: 50px;
+  display: none;
+}
+
+#busan {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  margin-left: 550px;
+  position: absolute;
+  margin-top: 670px;
+}
+
+#busanicon {
+  position: absolute;
+  margin-left: 555px;
+  margin-top: 630px;
+  width: 50px;
+  height: 50px;
+}
+
+#busanwind {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  margin-left: 550px;
+  position: absolute;
+  margin-top: 670px;
+  display: none;
+}
+
+#busanwindicon {
+  position: absolute;
+  margin-left: 555px;
+  margin-top: 630px;
+  width: 50px;
+  height: 50px;
+  display: none;
+}
+
+#gwangju {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  margin-left: 405px;
+  position: absolute;
+  margin-top: 710px;
+}
+
+#gwangjuicon {
+  position: absolute;
+  margin-left: 410px;
+  margin-top: 670px;
+  width: 50px;
+  height: 50px;
+}
+
+#gwangjuwind {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  margin-left: 405px;
+  position: absolute;
+  margin-top: 710px;
+  display: none;
+}
+
+#gwangjuwindicon {
+  position: absolute;
+  margin-left: 410px;
+  margin-top: 670px;
+  width: 50px;
+  height: 50px;
+  display: none;
+}
+
+#gangwon {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  margin-left: 480px;
+  position: absolute;
+  margin-top: 450px;
+}
+
+#gangwonicon {
+  position: absolute;
+  margin-left: 483px;
+  margin-top: 410px;
+  width: 50px;
+  height: 50px;
+}
+
+#gangwonwind {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  margin-left: 480px;
+  position: absolute;
+  margin-top: 450px;
+  display: none;
+}
+
+#gangwonwindicon {
+  position: absolute;
+  margin-left: 483px;
+  margin-top: 410px;
+  width: 50px;
+  height: 50px;
+  display: none;
+}
+
+#dokdo {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  margin-left: 725px;
+  position: absolute;
+  margin-top: 470px;
+}
+
+#dokdoicon {
+  position: absolute;
+  margin-left: 730px;
+  margin-top: 430px;
+  width: 50px;
+  height: 50px;
+}
+
+#dokdowind {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  margin-left: 725px;
+  position: absolute;
+  margin-top: 470px;
+  display: none;
+}
+
+#dokdowindicon {
+  position: absolute;
+  margin-left: 730px;
+  margin-top: 430px;
+  width: 50px;
+  height: 50px;
+  display: none;
+}
+
+#jeju {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  margin-left: 305px;
+  position: absolute;
+  margin-top: 845px;
+}
+
+#jejuicon {
+  position: absolute;
+  margin-left: 310px;
+  margin-top: 805px;
+  width: 50px;
+  height: 50px;
+}
+
+#jejuwind {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  margin-left: 305px;
+  position: absolute;
+  margin-top: 845px;
+  display: none;
+}
+
+#jejuwindicon {
+  position: absolute;
+  margin-left: 310px;
+  margin-top: 805px;
+  width: 50px;
+  height: 50px;
+  display: none;
+}
+
+#time {
+  width: 300px;
+  height: 30px;
+  position: absolute;
+  margin-top: 300px;
+  margin-left: 580px;
+  font-weight: bold;
+  color: dimgrey;
+}
+
+#time:hover {
+  color: black;
+  cursor: pointer;
+}
+
+@keyframes fadeIn{
+  0% {
+  opacity: 0.1;
+  transform: translate3d(0,0,0);
+  }
+  to {
+  opacity: 1;
+  transform: translateZ(0);
+  }
+}

@@ -18,7 +18,7 @@ body {
 
 .container * {
   margin: 10px;
-  color: #fce4ec;
+  /* color: #fce4ec; */
 }
 
 .container h1 {
@@ -26,4 +26,10 @@ body {
 }
 .weatherInfo {
   font-size: 1.5em;
+}
+
+#suwon {
+  border: 1px solid black;
+  width: 200px;
+  height: 30px;
 }
