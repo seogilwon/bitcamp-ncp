@@ -6,6 +6,7 @@
 //6. on()
 //7. appendTo()
 //8. Method Chaining
+//9. click()
 function jQuery(selector) {
   let el = [];   //생성한태그나 찾은 태그를 담는 배열
 
@@ -66,6 +67,13 @@ el.on = function(eventName, listener) {
     e.addEventListener(eventName, listener);
   }
 
+  return this;
+};
+
+el.click = function(handler) {          //handler=listener=callback
+  for (let e of el) {
+    e.addEventListener('click', handler);
+  }
   return this;
 };
 

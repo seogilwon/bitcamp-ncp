@@ -19,14 +19,14 @@ app.get(                        //GET요청이 들어왔을때 호출될 메서�
   '/exam01-1',                  //요청URL
   (req, res) => {               //요청 핸들러 : 요청이들어왔을때 호출되는 메서드
     res.set('Access-Control-Allow-Origin', '*'); //CORS 문제 해결: 누구나컨텐트받을수있게설정
-    res.set('Content-Type', 'text/plain;charset=UTF-8');
+    res.set('Content-Type', 'text/plain; charset=UTF-8');
     res.send('Hello!(누구게)');
   }
 );
 
 app.get('/exam02-1', (req, res) => {               //요청 핸들러 : 요청이들어왔을때 호출되는 메서드
     res.set('Access-Control-Allow-Origin', '*'); //CORS 문제 해결: 누구나컨텐트받을수있게설정
-    res.set('Content-Type', 'text/plain;charset=UTF-8');
+    res.set('Content-Type', 'text/plain; charset=UTF-8');
 
     var payload = `이름: ${req.query.name}\n`;
     payload += `나이: ${req.query.age}\n`;  //\n은 줄바꿈코드 //req상자안 query상자안 age값을 $자리에 둔다. // ``문자열빽틱으로묶는다.
@@ -36,7 +36,7 @@ app.get('/exam02-1', (req, res) => {               //요청 핸들러 : 요청�
 
 app.post('/exam02-2', (req, res) => {          //post요청이 들어오면 호출될함수등록
   res.set('Access-Control-Allow-Origin', '*');
-  res.set('Content-Type', 'text/plain;charset=UTF-8');
+  res.set('Content-Type', 'text/plain; charset=UTF-8');
 
   var payload = `이름: ${req.body.name}\n`;
   payload += `나이: ${req.body.age}\n`;
@@ -46,7 +46,7 @@ app.post('/exam02-2', (req, res) => {          //post요청이 들어오면 호�
 
 app.get('/exam03-1', (req, res) => {
   res.set('Access-Control-Allow-Origin', '*');
-  res.set('Content-Type', 'text/plain;charset=UTF-8');
+  res.set('Content-Type', 'text/plain; charset=UTF-8');
 
   setTimeout(()=> {      //10초지연
     res.send("Hello!");
@@ -55,7 +55,7 @@ app.get('/exam03-1', (req, res) => {
 
 app.get('/exam03-4', (req, res) => {
   res.set('Access-Control-Allow-Origin', '*');
-  res.set('Content-Type', 'text/plain;charset=UTF-8');
+  res.set('Content-Type', 'text/plain; charset=UTF-8');
 
   let a = parseInt(req.query.a);
   let b = parseInt(req.query.b);
@@ -65,21 +65,21 @@ app.get('/exam03-4', (req, res) => {
 
 app.get('/header', (req, res) => {
   res.set('Access-Control-Allow-Origin', '*');
-  res.set('Content-Type', 'text/html;charset=UTF-8');
+  res.set('Content-Type', 'text/html; charset=UTF-8');
 
   res.send('<h1>비트캠프 네이버 클라우드 AIaaS 개발자 양성 과정</h1>');
 });
 
 app.get('/footer', (req, res) => {
   res.set('Access-Control-Allow-Origin', '*');
-  res.set('Content-Type', 'text/html;charset=UTF-8');
+  res.set('Content-Type', 'text/html; charset=UTF-8');
 
   res.send('<adress>비트캠프 서초캠프@2022</adress>');
 });
 
 app.get('/exam04-3', (req, res) => {
   res.set('Access-Control-Allow-Origin', '*');
-  res.set('Content-Type', 'text/html;charset=UTF-8');
+  res.set('Content-Type', 'text/html; charset=UTF-8');
 
   let arr = [
     {no:1,title:'제목1',writer:'홍길동',viewCnt:19},
@@ -97,7 +97,7 @@ app.get('/exam04-3', (req, res) => {
 app.get('/proxy', (req, res) => {     
 
     res.set('Access-Control-Allow-Origin', '*'); 
-    res.set('Content-Type', 'text/plain;charset=UTF-8');
+    res.set('Content-Type', 'text/plain; charset=UTF-8');
 
     request.get({
       url: req.query.url
@@ -118,14 +118,24 @@ app.get('/proxy2', (req, res) => {
   "&dataType=JSON" +
   "&base_date=" + req.query.base_date +
   "&base_time=0600" +
-  "&nx=" + req.query.nx +
-  "&ny=" + req.query.ny;
+  "&nx=" + req.query.nx +  //x좌표
+  "&ny=" + req.query.ny; //y좌표
 
   request.get({
     url: openApiUrl
   }, (error, response, body) => {
     res.send(body);
   });
+});
+
+app.post('/login', (req, res) => {          //post요청이 들어오면 호출될함수등록
+  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Content-Type', 'text/plain; charset=UTF-8');
+
+  var payload = `이메일: ${req.body.email}\n`;
+  payload += `암호: ${req.body.password}\n`;
+
+  res.send(payload);
 });
 
 //웹서버 실행하기
