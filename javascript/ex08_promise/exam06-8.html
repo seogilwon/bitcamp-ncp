@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>비동기작업</title>
+</head>
+<body>
+<h1>Promise - 예외처리: Method Chaining II</h1>
+<script>
+const promise = new Promise((resolve, reject) => {
+  // resolve();
+  // reject();
+  throw '오류 발생!!!';
+  // 위에 주석 하나씩풀며확인
+})
+.then(() => console.log("fulfilled! - 1"))
+.then(() => console.log("fulfilled! - 2"))
+.catch(() => console.log("catched! - 1"))
+.catch(() => console.log("catched! - 2"))
+.then(() => console.log("fulfilled! - 3"))
+.then(() => console.log("fulfilled! - 4"));
+
+// promise체인은 끝까지 연결되어 전달한다.
+// 중간에 catch를 안놓는걸 권장한다.
+console.log("끝!");
+
+</script>
+</body>
+</html>
