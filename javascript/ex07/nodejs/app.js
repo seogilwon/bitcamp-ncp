@@ -93,6 +93,9 @@ app.get('/exam04-3', (req, res) => {
   res.send(JSON.stringify(arr));  
 });
 
+//객체 ---------> JSON형식의 문자열
+//     <---------
+
 //클라이언트 요청을 다른서버에게 보낸다.
 app.get('/proxy', (req, res) => {     
 
