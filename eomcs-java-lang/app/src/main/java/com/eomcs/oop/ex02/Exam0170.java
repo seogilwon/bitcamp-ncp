@@ -56,7 +56,7 @@ public class Exam0170 {
     printScore(s3);
   }
 
-  static void printScore(Score s) {
+  static void printScore(Score1 s) {
     System.out.printf("%s: %d, %d, %d, %d, %.1f\n",
         s.name, s.kor, s.eng, s.math, s.sum, s.aver);
   }

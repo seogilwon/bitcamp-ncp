@@ -11,7 +11,7 @@ package com.eomcs.oop.ex02.test;
 //7) 클래스를 역할에 따라 패키지로 분류
 //8) 생성자 도입: 인스턴스를 생성할 때 값을 초기화시키는 특별한 메서드
 //
-public class ScroeTest0 {
+public class ScroeTest1 {
   public static void main(String[] args) {
     String name;
     int kor;
