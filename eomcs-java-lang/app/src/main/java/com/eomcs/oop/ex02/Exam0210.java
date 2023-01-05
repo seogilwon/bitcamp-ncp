@@ -17,7 +17,7 @@ public class Exam0210 {
     result = plus(2, 3);
     result = minus(result, 1);
     result = multiple(result, 7);
-    result = divide(result, 3);
+    result = Exam0210.divide(result, 3);  // Exam0210.divide(클래스이름.)스태틱메소드는 호출할때 원래 앞에 클래스이름을 줘야함. 생략가능
 
     System.out.printf("result = %d\n", result);
   }
