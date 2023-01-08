@@ -4,12 +4,9 @@ package bitcamp.myapp;
 public class Member {
   int no; // 필드
   String name;
-  String tel;
-  String postNo;
-  String basicAddress;
-  String detailAddress;
-  boolean working;
-  char gender;
-  byte level;
+  String heading;
+  String content;
+  int password;
   String createdDate;
+  int viewcnt = 0;
 }
