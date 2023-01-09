@@ -11,7 +11,7 @@ public class Exam0210 {
     s1.eng = 90;
     s1.math = 80;
 
-    s1.compute();
+    s1.compute(); //90이 나와야함.
 
     // 계산을 한 후에 임의적으로 합계나 평균을 변경한다면?
     s1.aver = 100f;
