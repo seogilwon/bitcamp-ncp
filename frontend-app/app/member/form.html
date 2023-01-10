@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>멤버 작성</h1>
+  <form>
+  <table border="1">
+    <tbody>
+      <tr>
+        <th>이름</th>
+        <td><input type="text" name="name" id="f-name"></td>
+      </tr>
+      <tr>
+        <th>전화번호</th>
+        <td><textarea name="tel" id="f-tel"></textarea></td>
+      </tr>
+      <tr>
+        <th>암호</th>
+        <td><input type="password" name="password" id="f-password"></td>
+      </tr>
+    </tbody>
+  </table>
+  <button id="add-btn" type="button">등록</button>
+  <button id="cancel-btn" type="button">취소</button>
+  </form>
+
+  <script>
+    document.querySelector('#add-btn').onclick = (e) => {
+      var name = encodeURIComponent(document.querySelector('#f-name').value);
+      var tel = encodeURIComponent(document.querySelector('#f-tel').value);
+      var password = document.querySelector('#f-password').value;
+
+      // console.log(`title=${title}&contnet=${content}&password=${password}`);
+      
+      fetch('http://localhost:8080/members', {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/x-www-form-urlencoded'
+        },
+        body: `name=${name}&tel=${tel}&password=${password}`
+      })
+      .then((response) => {return response.json();}) //promise객체리턴
+      .then((obj) => {
+          location.href = "list.html";
+      })
+      .catch((err) => {
+        alert("서버 요청 오류 발생!")
+        console.log(err);
+      });
+    };
+
+    document.querySelector('#cancel-btn').onclick = (e) => {
+      location.href = "list.html"
+    };
+  
+  </script>
+
+</body>
+</html>
