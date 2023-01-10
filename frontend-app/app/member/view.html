@@ -60,7 +60,7 @@
 
     fetch(`http://localhost:8080/members/${no}`)
       .then((response) => response.json())
-      .then((oboardsbj) => {
+      .then((obj) => {
         if (obj.status == "failure") {
           alert("서버 요청 오류!");
           console.log(obj.data);
@@ -69,6 +69,7 @@
         document.querySelector("#f-no").value = obj.data.no;
         document.querySelector("#f-name").value = obj.data.name;
         document.querySelector("#f-tel").value = obj.data.tel;
+        document.querySelector("#f-createddate").innerHTML = obj.data.createdDate;
         document.querySelector("#f-viewcount").innerHTML = obj.data.viewCount;
       })
       .catch((err) => {
