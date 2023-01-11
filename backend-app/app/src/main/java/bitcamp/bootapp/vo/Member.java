@@ -3,16 +3,15 @@ package bitcamp.bootapp.vo;
 // 회원 데이터를 담을 메모리를 설계한다.
 public class Member {
   private int no;
-  private String name;//
-  private String tel;//
+  private String name;
+  private String tel;
   private String postNo;
   private String basicAddress;
   private String detailAddress;
   private boolean working;
   private  char gender;
   private byte level;
-  private String createdDate;//
-  private String password; //
+  private String createdDate;
 
   public int getNo() {
     return no;
@@ -73,12 +72,6 @@ public class Member {
   }
   public void setCreatedDate(String createdDate) {
     this.createdDate = createdDate;
-  }
-  public String getPassword() {
-    return password;
-  }
-  public void setPassword(String password) {
-    this.password = password;
   }
 
 

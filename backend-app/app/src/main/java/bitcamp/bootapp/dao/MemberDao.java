@@ -6,10 +6,12 @@ import bitcamp.bootapp.vo.Member;
 public class MemberDao {
   private static final int SIZE = 100;
 
+  private int no;
   private int count;
   private Member[] members = new Member[SIZE];
 
   public void insert(Member member) {
+    member.setNo(++no);
     this.members[this.count++] = member;
   }
 
@@ -26,11 +28,9 @@ public class MemberDao {
     return null;
   }
 
-
   public void update(Member member) {
     this.members[this.indexOf(member)] = member;
   }
-
 
   public void delete(Member member) {
     for (int i = this.indexOf(member) + 1; i < this.count; i++) {
@@ -38,7 +38,6 @@ public class MemberDao {
     }
     this.members[--this.count] = null; // 레퍼런스 카운트를 줄인다.
   }
-
 
   private int indexOf(Member b) {
     for (int i = 0; i < this.count; i++) {

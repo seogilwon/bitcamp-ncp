@@ -20,7 +20,6 @@ public class BoardController {
 
   BoardDao boardDao = new BoardDao();
 
-  @CrossOrigin(origins = "http://127.0.0.1:5500")
   @PostMapping("/boards")
   public Object addBoard(
       @RequestParam(required = false) String title,
@@ -54,7 +53,6 @@ public class BoardController {
 
     return contentMap;
   }
-
 
   @GetMapping("/boards/{boardNo}")
   public Object getBoard(@PathVariable int boardNo) {
@@ -106,12 +104,10 @@ public class BoardController {
     return contentMap;
   }
 
-
-
   @DeleteMapping("/boards/{boardNo}")
   public Object deleteBoard(
       @PathVariable int boardNo,
-      @RequestParam String password) {
+      @RequestParam(required = false) String password) {
 
     Board b = this.boardDao.findByNo(boardNo);
 
@@ -129,6 +125,4 @@ public class BoardController {
 
     return contentMap;
   }
-
-
 }
