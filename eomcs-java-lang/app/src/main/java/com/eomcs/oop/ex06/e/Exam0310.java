@@ -9,6 +9,7 @@ class C {
 
   public C() {
     v1 = 100;
+    //v1 = 101; // final 필드는 딱 한번만 값을 설정(초기화)할수있다.
   }
 
   public void m1() {

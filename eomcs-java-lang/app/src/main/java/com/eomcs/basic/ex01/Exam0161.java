@@ -11,6 +11,7 @@ public class Exam0161 {
 
     // 배열의 클래스 정보
     String[] obj2 = new String[10];
+
     classInfo = obj2.getClass();
     System.out.println(classInfo.getName()); //[Ljava.lang.String;
 
@@ -29,6 +30,7 @@ public class Exam0161 {
     classInfo = obj5.getClass();
     System.out.println(classInfo.getName()); //[D
 
+    //위 코드와같다.
     System.out.println(new byte[10].getClass().getName()); //[B
     System.out.println(new short[10].getClass().getName()); //[S
     System.out.println(new long[10].getClass().getName()); //[J
