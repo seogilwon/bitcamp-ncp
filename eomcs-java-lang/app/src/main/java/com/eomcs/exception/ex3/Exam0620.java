@@ -16,7 +16,7 @@ public class Exam0620 {
 
     } finally {
       // 이렇게 정상적으로 실행되든 예외가 발생하든 상관없이
-      // 자원해제 같은 일은 반드시 실행해야 한다.
+      // 자원해제 같은 일은 반드시 실행해야 한다. (finally블록은무조건실행됨)
       keyScan.close();
       System.out.println("스캐너 자원 해제!");
     }

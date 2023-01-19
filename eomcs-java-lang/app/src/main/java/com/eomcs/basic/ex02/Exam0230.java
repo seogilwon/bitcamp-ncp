@@ -33,7 +33,7 @@ public class Exam0230 {
     System.out.println(obj5 == obj6); // true
 
     // 다음과 같이 auto-boxing으로 생성된 객체와 valueOf()가 리턴한 객체를 비교해 보자!
-    System.out.println(obj3 == obj5); // true
+    System.out.println(obj3 == obj5); // true //주소가같다.
 
     // 주의!
     //   -128 ~ 127 범위를 넘어가는 경우 무조건 새 객체를 만든다.

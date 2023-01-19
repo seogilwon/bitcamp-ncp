@@ -19,9 +19,9 @@ public class Exam0510 {
 
   public static void main(String[] args) {
     try {
-      m(4);
       System.out.println("try");
-      return; 
+      m(0);
+      return;
     } catch (RuntimeException | SQLException | IOException e) {
       System.out.println("catch 1");
 
@@ -30,7 +30,7 @@ public class Exam0510 {
 
     } finally {
       // 정상적으로 실행하든, 아니면 예외가 발생하여 catch 블록을 실행하든
-      // finally 블록은 무조건 실행한다.
+      // finally 블록은 무조건 실행한다. (위에서 return해도 실행)
       // 즉 try ~ catch ~ 블록을 나가기 전에 반드시 실행한다.
       // 그래서 이 블록에는
       // try 에서 사용한 자원을 해제시키는 코드를 주로 둔다.
@@ -39,6 +39,8 @@ public class Exam0510 {
       //
       System.out.println("finally");
     }
+
+    System.out.println("안녕히가세요!");
   }
 
 }
