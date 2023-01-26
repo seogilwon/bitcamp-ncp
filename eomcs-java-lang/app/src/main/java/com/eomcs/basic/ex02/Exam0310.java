@@ -2,7 +2,6 @@
 package com.eomcs.basic.ex02;
 
 import java.util.Date;
-//import java.sql.Date; //Date구분불가
 
 public class Exam0310 {
   public static void main(String[] args) {

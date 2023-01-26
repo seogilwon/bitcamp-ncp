@@ -20,7 +20,6 @@ public class Exam0410 {
   public static void main(String[] args) {
     // 예외를 던질 수 있다고 선언된 메서드를 호출할 때
     // 그 예외 상황에 대한 처리를 하지 않으면 컴파일 오류가 발생한다.
-    // try catch로 받아야함.
     m(1);
 
   }

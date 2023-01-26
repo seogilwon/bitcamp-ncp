@@ -13,9 +13,9 @@ public class Exam0142 {
     String str = ((String) obj).toLowerCase();
     System.out.println(str);
 
-    //String 객체는 immutable(변경할수없는) 객체이다.
+    // String 객체는 immutable(변경할 수 없는) 객체이다.
     System.out.println(obj == str);
-    System.out.println(obj); //원본그대로임
+    System.out.println(obj);
 
     // 또는 다음과 같이 원래 타입의 레퍼런스에 저장한 다음 사용하라.
     String x1 = (String) obj;
@@ -23,5 +23,6 @@ public class Exam0142 {
     System.out.println(str);
   }
 }
+
 
 

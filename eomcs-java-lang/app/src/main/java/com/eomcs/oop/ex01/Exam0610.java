@@ -1,6 +1,6 @@
 package com.eomcs.oop.ex01;
 
-// # public 클래스와 기본 클래스(default class = package private class = 패키지에서 사적으로 사용하는 클래스)
+// # public 클래스와 기본 클래스(default class = package private class)
 //
 public class Exam0610 {
   public static void main(String[] args) {

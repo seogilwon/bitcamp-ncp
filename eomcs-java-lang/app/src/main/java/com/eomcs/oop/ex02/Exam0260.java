@@ -21,7 +21,7 @@ public class Exam0260 {
     void plus(int value) {
       // 메서드를 호출할 때 앞쪽에 지정한 인스턴스 주소는
       // this 라는 내장 변수에 자동으로 저장된다.
-      this.result += value; //200번지로 찾아가서.
+      this.result += value;
     }
 
     void minus(int value) {

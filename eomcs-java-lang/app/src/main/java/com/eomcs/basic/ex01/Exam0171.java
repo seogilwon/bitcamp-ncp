@@ -32,8 +32,6 @@ public class Exam0171 {
       this.aver = this.sum / 3f;
     }
 
-
-
     @Override
     public String toString() {
       return "Score [name=" + name + ", kor=" + kor + ", eng=" + eng + ", math=" + math + ", sum="

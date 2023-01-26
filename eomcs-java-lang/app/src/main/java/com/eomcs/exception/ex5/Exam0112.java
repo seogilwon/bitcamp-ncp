@@ -23,7 +23,7 @@ public class Exam0112 {
       board.setCreatedDate(Date.valueOf(keyScan.nextLine()));
 
       return board;
-    } //finally안적어도 자동해제close()되므로편함.
+    } 
   }
 
   public static void main(String[] args) {

@@ -13,7 +13,7 @@ public class Exam0430 {
   }
 
   static MyObject getMyObject() {
-    MyObject ref = new MyObject(); //MyObject에 선언된대로 Heap변수에 만들라.
+    MyObject ref = new MyObject(); // MyObject에 선언된대로 변수를 Heap에 만들라!
     ref.a = 100;
     ref.b = 200;
 

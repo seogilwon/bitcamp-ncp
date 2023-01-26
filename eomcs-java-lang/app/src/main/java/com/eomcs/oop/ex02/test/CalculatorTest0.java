@@ -1,6 +1,6 @@
 package com.eomcs.oop.ex02.test;
 
-//# 관련된 기능(메서드)을 묶어 분류하기
+// # 관련된 기능(메서드)을 묶어 분류하기
 //1) 분류 전
 //2) 메서드를 클래스로 묶어 분류하기
 //3) 클래스 변수 도입
@@ -18,7 +18,7 @@ public class CalculatorTest0 {
     result = plus(2, 3);
     result = minus(result, 1);
     result = multiple(result, 7);
-    result = CalculatorTest0.divide(result, 3);
+    result = divide(result, 3);
 
     System.out.printf("result = %d\n", result);
   }
@@ -39,6 +39,5 @@ public class CalculatorTest0 {
     return a / b;
   }
 }
-
 
 
