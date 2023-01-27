@@ -10,7 +10,6 @@ public class Exam0510 {
     public static int multiple(int a, int b) {return a * b;}
     public static int divide(int a, int b) {return a / b;}
   }
-
   interface Calculator {
     int compute(int x, int y);
   }
@@ -37,6 +36,14 @@ public class Exam0510 {
     // => 문법:
     //    클래스명::메서드명
     Calculator c1 = MyCalculator::plus;
+    //MyCalculator의 스태틱 메서드인 plus()를 가지고 구현체(Calculator)를 자동 생성!
+    //(위 아래 코드는 같다.)
+    //    Calculator c1 = new Calculator() {
+    //      @Override
+    //      public int compute(int x, int y) {
+    //        return MyCalculator.plus(x, y);
+    //      };
+    //    }
     Calculator c2 = MyCalculator::minus;
     Calculator c3 = MyCalculator::multiple;
     Calculator c4 = MyCalculator::divide;

@@ -29,7 +29,7 @@ public class Exam0440 {
         System.out.println("익명 클래스!!!");
       }
     };
-    m1(obj);
+    m1(obj); //<---3)
 
     // 3) 익명 클래스를 파라미터 자리에 바로 삽입
     m1(new A() {
@@ -38,6 +38,19 @@ public class Exam0440 {
         System.out.println("안녕!!!");
       }
     });
+
+
+
+    // 연습해보기.
+    class Y implements A {
+      @Override
+      public void print() {
+        System.out.println("하하하하!");
+      }
+    }
+
+    m1(new Y());
+
 
   }
 }

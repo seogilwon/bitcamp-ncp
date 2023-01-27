@@ -39,7 +39,7 @@ public class Exam0520 {
     Calculator c04 = MyCalculator::divide;
     // Calculator c05 = MyCalculator::power; // 해당 메서드를 가지고 구현체를 만들 수 없다.
 
-    // 위의 코드는 내부적으로 다음과 같다.
+    // 위의 코드(plus)는 내부적으로 다음과 같다.
     //
     Calculator c1 = new Calculator() {
       @Override

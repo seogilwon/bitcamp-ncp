@@ -50,7 +50,7 @@ public class Exam0530 {
 
     // 리턴 타입 int ===> double
     Calculator1 c1 = MyCalculator::plus; // OK!
-    // 위 문장은 다음 문장과 같다.
+    // 위 문장은 다음 문장과 같다. (컴파일러가 아래와같이바꾼다)
     //    Calculator1 c1 = new Calculator1() {
     //      @Override
     //      public double compute(int a, int b) {
@@ -65,8 +65,12 @@ public class Exam0530 {
 
 
 
+    //    int a = 100;
+    //    short s = a;
+
     // 리턴 타입 int ===> short
     //    Calculator3 c3 = MyCalculator::plus; // 컴파일 오류!
+    //    System.out.println(c3.compute(100, 200));
     // 위 문장은 다음과 같다.
     //    Calculator3 c3 = new Calculator3() {
     //      @Override
@@ -93,7 +97,7 @@ public class Exam0530 {
     //    Calculator5 c5 = new Calculator5() {
     //      @Override
     //      public Object compute(int a, int b) {
-    //        return MyCalculator.plus(a, b); // OK! 
+    //        return MyCalculator.plus(a, b); // OK!
     //        //이유? plus()가 리턴한 int 값이 오토박싱 되기 때문이다.
     //      }
     //    };
