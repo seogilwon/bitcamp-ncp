@@ -17,7 +17,7 @@ public class Exam0622 {
 
     String jsonStr = "[{\"position\":\"대리\",\"fax\":\"02-1111-2222\",\"no\":101,\"name\":\"홍길동\",\"email\":\"hong@test.com\",\"registeredDate\":\"9월 16, 2021\"},{\"major\":\"컴퓨터공학\",\"hourPay\":10000,\"no\":103,\"name\":\"안창호\",\"email\":\"ahn@test.com\",\"registeredDate\":\"9월 16, 2021\"}]";
 
-    Gson gson = new GsonBuilder()
+    Gson gson = new GsonBuilder() //0621 리팩토링
         .registerTypeAdapter(Member.class, new JsonDeserializer<Member>() {
           @Override
           public Member deserialize(JsonElement json, Type typeOfT,
