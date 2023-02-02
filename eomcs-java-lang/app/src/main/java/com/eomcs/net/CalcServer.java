@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 
 public class CalcServer {
   public static String calc(String exp) {
-    StringTokenizer st = new StringTokenizer(exp, " ");
+    StringTokenizer st = new StringTokenizer(exp, " ", false);
     if (st.countTokens() != 3)
       return "error";
     String res = "";
