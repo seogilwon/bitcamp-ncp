@@ -30,7 +30,7 @@ insert into test1(name,class,working) values('ooo','java101','N');
 select * from 테이블;
 select * from test1;
 
-/* 특정 컬럼의 값만 조회할 때 => "프로젝션(projection)"이라 부른다.*/
+/* 특정 컬럼의 값만 조회할 때 => "프로젝션(projection)"이라 부른다. (중요)*/
 select 컬럼명,컬럼명 from 테이블;
 select no, name, tel from test1;
 
@@ -218,6 +218,8 @@ where name like 's0_';
 ### 날짜 다루기
 - 날짜 함수와 문자열 함수를 사용하여 날짜 값을 다루는 방법.
 
+drop table test1;
+
 create table test1 (
   no int not null,
   title varchar(200) not null,
@@ -279,8 +281,8 @@ select regdt, date(regdt), time(regdt) from test1;
 date_add(날짜데이터, interval 값 단위);
 date_sub(날짜데이터, interval 값 단위);
 
-select date_add(now(), interval 11 day);
-select date_sub(now(), interval 11 day);
+select date_add(now(), interval 11 day); /*더하기*/
+select date_sub(now(), interval 11 day); /*빼기*/
 
 /* 두 날짜 사이의 간격을 알아내기 */
 datediff(날짜1, 날짜2);
