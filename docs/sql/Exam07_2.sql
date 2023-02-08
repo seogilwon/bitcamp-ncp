@@ -4,10 +4,10 @@
 select rno, loc, name
 from room;
 
-/* 이름의 오름 차순(ascending)으로 정렬하기 */
+/* 이름의 오름 차순(ascending)으로 정렬하기  (A~Z)*/
 select rno, loc, name
 from room
-order by name asc;
+order by name asc;    /*아스키값 크기*/
 
 /* asc는 생략 가능하다. */
 select rno, loc, name
@@ -19,7 +19,7 @@ select rno, loc, name
 from room
 order by name desc;
 
-/* 이름은 오름차순, 지점명도 오름차순으로 정렬하기*/
+/* 이름은 오름차순, 지점명도 오름차순으로 정렬하기 (순서중요:1.이름2.지점명)*/
 select rno, loc, name
 from room
 order by name asc, loc asc;
@@ -34,26 +34,22 @@ select rno, loc, name
 from room
 order by loc asc, name asc;
 
-select 
-  rno, 
-  loc, 
-  name
-from 
-  room
-order by 
-  loc asc, 
-  name desc;
+-- order by 에서 컬럼을 지정할때 select절에 선택된 컬럼이 아니더라도 지정할 수 있다.
+-- 즉 select절에 있는 컬럼 또는 테이블 컬럼을 지정할 수 있다.
+select rno, name
+from room
+order by loc asc, name asc;
 
-select 
-  rno, 
-  name
-from 
-  room
-order by 
-  loc asc, 
-  name desc;
 
 -- 실행 순서: from -> where -> select -> order by
+-- 1) from 또는 join : 테이블의 전체 데이터 또는 조인 데이터
+-- 2) where : 조건에 따라 결과로 뽑을 데이터를 selection 한다.
+-- 3) group by : 조건에 따라 뽑은 데이터를 특정 컬럼을 기준으로 데이터를 묶는다.
+-- 4) having : 그룹으로 묶은 데이터를 조건에 따라 선별한다.
+-- 5) select : 최종 결과로 뽑을 컬럼을 표시만(projection) 한다. 표현식으로 계산한 컬럼도 포함시킨다.
+-- 6) order by : select 절에서 추가한 임의 컬럼이나 테이블 컬럼을 기준으로 정렬한다.
+-- 7) limit : 결과 데이터에서 지정한 범위의 데이터를 선택한다.
+-- 8) 결과 추출 : 7번을 수행한 결과 데이터에서 5번의 표시된 컬럼만 추출한다.
 select 
   concat(name,'-',loc) as class_name
 from 

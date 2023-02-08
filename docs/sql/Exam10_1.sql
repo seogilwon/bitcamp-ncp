@@ -11,7 +11,7 @@ select
 from
     room r;
 
--- 2단계: 지점정보를 저장한 컬럼을 기준으로 그룹으로 묶는다.
+-- 2단계: 지점정보를 저장한 컬럼을 기준으로 그룹으로 묶는다. (의미x)
 select
     r.rno, -- 그룹으로 묶인 경우 그 그룹의 첫 번째 데이터 값만 출력한다.
     r.loc,
@@ -30,16 +30,16 @@ from
 group by
     r.loc;
 
--- 4단계: 그룹으로 묶은 경우 그룹 관련 함수를 사용할 수 있다.
+-- 4단계: 그룹으로 묶은 경우 그룹 관련 함수를 사용할 수 있다. 
 select
     r.loc,
-    count(*) as cnt
+    count(*) as cnt --그룹을쓰는이유count
 from
     room r
 group by
     r.loc;
 
--- 5단계: group by의 결과에서 최종 결과를 선택할 조건을 지정하고 싶다면
+-- 5단계: group by의 결과에서 최종 결과를 선택할 '조건'을 지정하고 싶다면
 --       having절을 사용한다.
 
 -- 예1) having 절에서 집합 함수 사용
