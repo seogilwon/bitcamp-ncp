@@ -1,17 +1,7 @@
-<%@page import="bitcamp.myapp.vo.Student"%>
-<%@page import="java.util.List"%>
-<%@page import="bitcamp.myapp.dao.StudentDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%! 
-  private StudentDao studentDao;
-
-  @Override
-  public void init() {
-    ServletContext ctx = getServletContext();
-    studentDao = (StudentDao) ctx.getAttribute("studentDao");
-  }
-  
   private static String getLevelText(int level) {
     switch (level) {
       case 0: return "비전공자";
@@ -27,33 +17,37 @@
 <title>비트캠프 - NCP 1기</title>
 </head>
 <body>
-<h1>학생(JSP)</h1>
+<h1>학생(JSP + MVC2)</h1>
 
-<div><a href='form.jsp'>새 학생</a></div>
+<div><a href='form'>새 학생</a></div>
 
 <table border='1'>
 <tr>
   <th>번호</th> <th>이름</th> <th>전화</th> <th>재직</th> <th>전공</th>
 </tr>
-<% 
-    String keyword = request.getParameter("keyword");
-    List<Student> students = this.studentDao.findAll(keyword);
-    for (Student student : students) {
-%>
+
+<c:forEach items="${students}" var="s">
   <tr>
-      <td><%=student.getNo()%></td> 
-      <td><a href='view.jsp?no=<%=student.getNo()%>'><%=student.getName()%></a></td> 
-      <td><%=student.getTel()%></td> 
-      <td><%=student.isWorking() ? "예" : "아니오"%></td> 
-      <td><%=getLevelText(student.getLevel())%></td>
+    <td>${s.no}</td>
+    <td><a href='view?no=${s.no}'>${s.name}</a></td>
+    <td>${s.tel}</td>
+    <td>${s.working ? "예" : "아니오"}</td>
+    
+    <td>
+      <c:choose>
+        <c:when test="${s.level == 0}">비전공자</c:when>
+        <c:when test="${s.level == 1}">준전공자</c:when>
+        <c:when test="${s.level == 2}">전공자</c:when>
+      </c:choose>
+    </td>
+    
   </tr>
-<% 
-    }
-%>
+</c:forEach>
+
 </table>
 
-<form action='list.jsp' method='get'>
-  <input type='text' name='keyword' value='<%=keyword != null ? keyword : ""%>'>
+<form action='list' method='get'>
+  <input type='text' name='keyword' value='${param.keyword}'>
   <button>검색</button>
 </form>
 
