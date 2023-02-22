@@ -9,18 +9,15 @@
 <title>비트캠프 - NCP 1기</title>
 </head>
 <body>
-<h1>학생(JSP + MVC2)</h1>
-
-  <c:choose>
-    <c:when test="${empty error}">
-          <p>입력했습니다.</p>
-    </c:when>
-    
-    <c:otherwise>
-          <p>입력 실패입니다.</p>
-    </c:otherwise>
-  </c:choose>
-  
+<h1>학생(JSP + MVC2 + EL + JSTL)</h1>
+<c:choose>
+  <c:when test="${empty error}">
+      <p>입력했습니다.</p>
+  </c:when>
+  <c:otherwise>
+      <p>입력 실패입니다.</p>
+  </c:otherwise>  
+</c:choose>
 </body>
 </html>
 
