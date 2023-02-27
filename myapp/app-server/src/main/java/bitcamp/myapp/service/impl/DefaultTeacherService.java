@@ -9,7 +9,7 @@ import bitcamp.myapp.service.TeacherService;
 import bitcamp.myapp.vo.Teacher;
 import bitcamp.util.TransactionManager;
 
-public class DefaultTeacherService implements TeacherService  {
+public class DefaultTeacherService implements TeacherService {
 
   private TransactionManager txManager;
   private MemberDao memberDao;
