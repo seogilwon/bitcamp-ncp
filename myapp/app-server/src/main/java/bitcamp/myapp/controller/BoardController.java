@@ -21,21 +21,21 @@ import bitcamp.myapp.vo.Member;
 @RequestMapping("/board")
 public class BoardController {
 
-  // ServletContext는 요청 핸들러의 파라미터로 주입 받을 수 없다.
+  // ServletContext 는 요청 핸들러의 파라미터로 주입 받을 수 없다.
   // 객체의 필드로만 주입 받을 수 있다.
   @Autowired private ServletContext servletContext;
   @Autowired private BoardService boardService;
 
-
   @GetMapping("form")
   public String form() {
-    return "/board/form.jsp";
+    return "board/form";
   }
-
 
   @PostMapping("insert")
   public String insert(
       Board board,
+      //      String title,
+      //      String content,
       Part[] files,
       Model model, // ServletRequest 보관소에 저장할 값을 담는 임시 저장소
       // 이 객체에 값을 담아 두면 프론트 컨트롤러(DispatcherServlet)가
@@ -43,6 +43,11 @@ public class BoardController {
       HttpSession session) {
     try {
       Member loginUser = (Member) session.getAttribute("loginUser");
+
+      //      Board board = new Board();
+      //      board.setTitle(title);
+      //      board.setContent(content);
+
       Member writer = new Member();
       writer.setNo(loginUser.getNo());
       board.setWriter(writer);
@@ -70,28 +75,27 @@ public class BoardController {
       e.printStackTrace();
       model.addAttribute("error", "data");
     }
-    return "/board/insert.jsp";
+    return "board/insert";
   }
-
 
   @GetMapping("list")
   public String list(String keyword, Model model) {
     model.addAttribute("boards", boardService.list(keyword));
-    return "/board/list.jsp";
+    return "board/list";
   }
-
 
   @GetMapping("view")
   public String view(int no, Model model) {
-
     model.addAttribute("board", boardService.get(no));
-    return"/board/view.jsp";
+    return"board/view";
   }
 
-
-  @PostMapping("/update")
+  @PostMapping("update")
   public String update(
       Board board,
+      //      int no,
+      //      String title,
+      //      String content,
       Part[] files,
       Model model,
       HttpSession session) {
@@ -133,9 +137,8 @@ public class BoardController {
       model.addAttribute("error", "data");
     }
 
-    return "/board/update.jsp";
+    return "board/update";
   }
-
 
   @PostMapping("delete")
   public String delete(int no, Model model, HttpSession session) {
@@ -152,15 +155,12 @@ public class BoardController {
       e.printStackTrace();
       model.addAttribute("error", "data");
     }
-    return "/board/delete.jsp";
+    return "board/delete";
   }
-
 
   @GetMapping("filedelete")
   public String filedelete(int boardNo, int fileNo, HttpSession session) {
-
     Member loginUser = (Member) session.getAttribute("loginUser");
-
     Board old = boardService.get(boardNo);
     if (old.getWriter().getNo() != loginUser.getNo()) {
       return "redirect:../auth/fail";
@@ -169,7 +169,6 @@ public class BoardController {
       return "redirect:view?no=" + boardNo;
     }
   }
-
 
 }
 
