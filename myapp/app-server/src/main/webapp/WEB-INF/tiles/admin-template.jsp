@@ -14,7 +14,7 @@
 header {
   height: 80px;
   background: black;
-  color: white;  
+  color: white;
 }
 
 footer {
@@ -23,6 +23,9 @@ footer {
   color: white;
 }
 
+a:visited {
+	color: white;
+}
 </style>
 </head>
 <body>

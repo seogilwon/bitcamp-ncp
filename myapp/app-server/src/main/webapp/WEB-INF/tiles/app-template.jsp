@@ -22,10 +22,6 @@
     background-color: navy;
     color: white;
   }
-  
-  a:visited {
-    color: white;
-  }
 </style>
 </head>
 <body>
