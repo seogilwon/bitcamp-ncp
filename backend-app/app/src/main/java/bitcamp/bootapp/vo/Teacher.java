@@ -1,5 +1,6 @@
 package bitcamp.bootapp.vo;
 
+@Data
 public class Teacher extends Member {
   // Member 클래스의 코드를 사용하겠다고 선언한다.
 
