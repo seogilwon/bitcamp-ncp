@@ -23,7 +23,7 @@ public class App implements WebMvcConfigurer {
 
   @Override
   public void addInterceptors(InterceptorRegistry registry) {
-    log.info("App.addInterceptors() 호출됨!");
+    log.debug("App.addInterceptors() 호출됨!");
     registry.addInterceptor(new AuthInterceptor()).excludePathPatterns("/auth/**");
     registry.addInterceptor(new AdminCheckInterceptor()).addPathPatterns("/students/**");
     registry.addInterceptor(new AdminCheckInterceptor()).addPathPatterns("/teachers/**");
