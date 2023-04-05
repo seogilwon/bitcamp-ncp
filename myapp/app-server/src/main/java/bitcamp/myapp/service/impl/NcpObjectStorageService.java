@@ -25,7 +25,6 @@ public class NcpObjectStorageService implements ObjectStorageService {
   final AmazonS3 s3;
 
   public NcpObjectStorageService(NaverConfig naverConfig) {
-    // S3 client
     s3 = AmazonS3ClientBuilder.standard()
         .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(
             naverConfig.getEndPoint(), naverConfig.getRegionName()))
@@ -35,13 +34,12 @@ public class NcpObjectStorageService implements ObjectStorageService {
   }
 
   @Override
-  public String uploadFile(String bucketName, MultipartFile file) {
+  public String uploadFile(String bucketName, String directoryPath, MultipartFile file) {
     if (file.isEmpty()) {
       return null;
     }
 
     try (InputStream fileIn = file.getInputStream()) {
-
       String filename = UUID.randomUUID().toString();
 
       ObjectMetadata objectMetadata = new ObjectMetadata();
@@ -49,16 +47,18 @@ public class NcpObjectStorageService implements ObjectStorageService {
 
       PutObjectRequest objectRequest = new PutObjectRequest(
           bucketName,
-          filename,
+          directoryPath + filename,
           fileIn,
           objectMetadata).withCannedAcl(CannedAccessControlList.PublicRead);
 
       s3.putObject(objectRequest);
 
-      return s3.getUrl(bucketName, filename).toString();
+      //return s3.getUrl(bucketName, directoryPath + filename).toString();
+      return filename;
 
     } catch (Exception e) {
       throw new RuntimeException("파일 업로드 오류", e);
     }
   }
+
 }
